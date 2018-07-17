@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="@dimen/x80">
+
+    <ImageView
+        android:id="@+id/product_img"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        android:layout_marginLeft="@dimen/x16"
+        android:layout_marginRight="@dimen/x16"
+        android:layout_centerVertical="true"/>
+
+    <View
+        android:id="@+id/divider_long"
+        android:layout_width="1px"
+        android:layout_height="@dimen/x60"
+        android:layout_toRightOf="@id/product_img"
+        android:layout_marginLeft="@dimen/x5"
+        android:layout_marginRight="@dimen/x5"
+        android:layout_centerVertical="true"
+        android:background="?android:attr/listDivider"/>
+
+    <TextView
+        android:id="@+id/product_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/divider_long"
+        android:layout_alignTop="@id/product_img"/>
+
+    <TextView
+        android:id="@+id/extra_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#9B9B9B"
+        android:layout_below="@id/product_name_tv"
+        android:layout_toRightOf="@id/divider_long"
+        android:layout_alignLeft="@id/product_name_tv"/>
+
+    <View
+        android:id="@+id/divider_short"
+        android:layout_width="1px"
+        android:layout_height="@dimen/x14"
+        android:layout_toRightOf="@id/extra_tv"
+        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/extra_tv"
+        android:layout_below="@id/product_name_tv"
+        android:background="#9B9B9B"/>
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#9B9B9B"
+        android:layout_toRightOf="@id/divider_short"
+        android:layout_below="@id/product_name_tv"
+        android:layout_alignTop="@id/divider_short"/>
+</RelativeLayout>

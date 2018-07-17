@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="button_normal_color" format="reference" />
+    <attr name="button_highlight_color" format="reference" />
+
+</resources>

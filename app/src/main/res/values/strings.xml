@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">petmii</string>
+
+    <!--hint-->
+    <string name="hint_phone_num">手机号码</string>
+    <string name="hint_verify_code">短信验证码</string>
+
+    <!--button-->
+    <string name="btn_submit">提交</string>
+    <string name="btn_finish">完成</string>
+    <string name="btn_retry">重试</string>
+    <string name="btn_confirm">确认</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_login">登录</string>
+    <string name="pick_verify_code">获取验证码</string>
+    <string name="btn_next">下一步</string>
+
+
+    <!--prompt-->
+    <string name="login_now">正在登录...</string>
+    <string name="connect_device_tips">设备、手机和路由器请尽可能的靠近</string>
+    <string name="light_state">指示灯状态:</string>
+    <string name="light_state_desc">
+        1.黄灯闪烁：网络断开；\n
+        2.绿灯闪烁：等待接入网络；\n
+        3.蓝灯常亮：网络正常；\n
+        4.红灯闪烁：机器故障；\n
+    </string>
+
+    <string name="reset_net">重置网络:</string>
+    <string name="reset_net_desc">
+        1. 断开电源，等待着15秒后再接入电源；\n
+        2. 同时按住电源开关和重置键5秒以上，电源指示灯为绿色闪烁状态。
+    </string>
+    <string name="reset_device">重置设备:</string>
+    <string name="reset_device_desc">
+        长按重置键10秒以上，等待机器重启\n
+        (重置的设备须重新绑定手机和配置网络)
+    </string>
+
+    <string name="wait_device_tips">接通电源，确认设备处于待连接状态</string>
+</resources>

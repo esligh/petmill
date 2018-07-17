@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yujian.petmii">
+
+    <application
+        android:name=".PetmiiApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/PetmiiTheme">
+        <activity
+            android:name=".frame.ui.LaunchActivity"
+            android:theme="@style/PetmiiTheme.Full">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".frame.ui.LoginActivity"
+            android:theme="@style/PetmiiTheme.NoActionBar" />
+        <activity android:name=".frame.ui.MainActivity" />
+        <activity android:name=".feeder.ui.ConfigActivity" />
+        <activity android:name=".feeder.ui.ConnectStateActivity" />
+        <activity android:name=".feeder.ui.ResetDeviceActvity" />
+        <activity android:name=".feeder.ui.UserProtocolActivity" />
+        <activity android:name=".feeder.ui.WifiConfigActivity" />
+        <activity android:name=".feeder.ui.AddFeederActivity" />
+        <activity android:name=".feeder.ui.FeederMainActivity" />
+        <activity android:name=".frame.ui.RegisterActivity"></activity>
+    </application>
+
+</manifest>

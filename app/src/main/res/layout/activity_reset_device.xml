@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.yujian.petmii.feeder.ui.ResetDeviceActvity">
+
+        <TextView
+            android:id="@+id/light_state_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/x18"
+            android:layout_marginLeft="@dimen/x24"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/light_state"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/light_state_tv"
+            android:layout_alignLeft="@id/light_state_tv"
+            android:text="@string/light_state_desc"/>
+
+        <TextView
+            android:id="@+id/reset_net_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/x50"
+            android:layout_marginLeft="@dimen/x24"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/reset_net"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/reset_net_tv"
+            android:layout_alignLeft="@id/reset_net_tv"
+            android:text="@string/reset_net_desc"/>
+
+        <TextView
+            android:id="@+id/reset_device_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/x50"
+            android:layout_marginLeft="@dimen/x24"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/reset_device"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/reset_device_tv"
+            android:layout_alignLeft="@id/reset_device_tv"
+            android:text="@string/reset_device_desc"/>
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="@dimen/x310"
+            android:layout_height="@dimen/y50"
+            android:layout_marginBottom="@dimen/x8"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/btn_confirm"
+            android:textSize="18sp"
+            android:alpha="0.25"
+            android:enabled="false"
+            style="@style/ButtonTheme"/>
+    </RelativeLayout>
+</layout>

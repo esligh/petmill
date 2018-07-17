@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="PetmiiTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/ButtonTheme</item>
+        <item name="circularProgressBarStyle">@style/CircularProgressBar</item>
+    </style>
+
+    <style name="PetmiiTheme.NoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PetmiiTheme.Full" parent="PetmiiTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>
