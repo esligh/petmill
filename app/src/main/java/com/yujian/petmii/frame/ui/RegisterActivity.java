@@ -2,18 +2,15 @@ package com.yujian.petmii.frame.ui;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
 
 import com.yujian.petmii.R;
 import com.yujian.petmii.base.BaseActivity;
-import com.yujian.petmii.databinding.ActivityLoginBinding;
 import com.yujian.petmii.databinding.ActivityRegisterBinding;
-import com.yujian.petmii.frame.contract.LoginContract;
 import com.yujian.petmii.frame.contract.RegisterContract;
-import com.yujian.petmii.frame.presenter.LoginPresenter;
 import com.yujian.petmii.frame.presenter.RegisterPresenter;
 import com.yujian.petmii.utils.ToastUtils;
 
@@ -34,10 +31,38 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
     public void initView() {
         mPresenter.onAttached();
         setListener();
+        mViewBinding.setBtnEnable(true);
     }
 
     private void setListener()
     {
+        mViewBinding.verifyCodeEt.setOnFocusChangeListener(((view, b) -> {
+            if(b){
+                setClearIconVisible(mViewBinding.verifyCodeEt.length() > 0);
+            }else{
+                setClearIconVisible(false);
+            }
+        }));
+
+        mViewBinding.verifyCodeEt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (mViewBinding.verifyCodeEt.isFocused()) {
+                    setClearIconVisible(s.length() > 0);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
         mViewBinding.registerBtn.setOnClickListener(v->{
             String account = mViewBinding.phoneNumberEt.getText().toString();
             String code = mViewBinding.verifyCodeEt.getText().toString();
@@ -53,6 +78,15 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
             }
             mPresenter.register(account,code,pwd);
         });
+    }
+
+    private void setClearIconVisible(boolean visible)
+    {
+        if(visible){
+            mViewBinding.codeClearIv.setVisibility(View.VISIBLE);
+        } else {
+            mViewBinding.codeClearIv.setVisibility(View.GONE);
+        }
     }
 
     @Override

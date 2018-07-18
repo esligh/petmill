@@ -30,17 +30,24 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
         mPresenter.onAttached();
         UIToolsUtils.setViewPressSelector(mViewBinding.clearIv,
                 R.drawable.ic_clean_n,R.drawable.ic_clean_c);
-        mViewBinding.verifyCodeEt.setOnFocusChangeListener(((view, b) -> {
+
+        setListener();
+        mViewBinding.setBtnEnable(true);
+    }
+
+    private void setListener()
+    {
+        mViewBinding.pwdEt.setOnFocusChangeListener(((view, b) -> {
             if(b){
-                setClearIconVisible(mViewBinding.verifyCodeEt.length() > 0);
+                setClearIconVisible(mViewBinding.pwdEt.length() > 0);
             }else{
                 setClearIconVisible(false);
             }
         }));
 
-        mViewBinding.clearIv.setOnClickListener(v->mViewBinding.verifyCodeEt.setText(""));
+        mViewBinding.clearIv.setOnClickListener(v->mViewBinding.pwdEt.setText(""));
 
-        mViewBinding.verifyCodeEt.addTextChangedListener(new TextWatcher() {
+        mViewBinding.pwdEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -48,7 +55,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if (mViewBinding.verifyCodeEt.isFocused()) {
+                if (mViewBinding.pwdEt.isFocused()) {
                     setClearIconVisible(s.length() > 0);
                 }
             }
@@ -62,16 +69,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
         mViewBinding.loginBtn.setOnClickListener(v->{
             String number = mViewBinding.phoneNumberEt.getText().toString().trim();
             if(TextUtils.isEmpty(number)){
+                ToastUtils.shortShow(R.string.please_input_phone);
                 return ;
             }
-            String code = mViewBinding.verifyCodeEt.getText().toString().trim();
-            if(TextUtils.isEmpty(code)){
+            String pwd = mViewBinding.pwdEt.getText().toString().trim();
+            if(TextUtils.isEmpty(pwd)){
+                ToastUtils.shortShow(R.string.please_input_pwd);
                 return ;
             }
-            mPresenter.doLogin(number,code);
+            mPresenter.doLogin(number,pwd);
         });
 
-        mViewBinding.setBtnEnable(true);
+        mViewBinding.userRegTv.setOnClickListener(v->{
+            UIToolsUtils.closeInputMethod(this);
+            startActivity(new Intent(this,RegisterActivity.class));
+        });
     }
 
     private void setClearIconVisible(boolean visible)

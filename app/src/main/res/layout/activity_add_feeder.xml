@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.yujian.petmii.feeder.ui.AddFeederActivity">
-
-    <ImageView
-        android:id="@+id/opt_img"
+    <data>
+        <variable name="btnEnable" type="boolean" />
+    </data>
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:background="@color/green"
-        android:scaleType="centerCrop"
-        android:src="@drawable/launch_bg"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.yujian.petmii.feeder.ui.AddFeederActivity">
 
-    <TextView
-        android:id="@+id/wait_tips_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/opt_img"
-        android:layout_marginTop="@dimen/x16"
-        android:layout_centerHorizontal="true"
-        android:textSize="14sp"
-        android:text="@string/wait_device_tips"/>
+        <ImageView
+            android:id="@+id/opt_img"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@color/green"
+            android:scaleType="centerCrop"
+            android:src="@drawable/launch_bg"/>
 
-    <TextView
-        android:id="@+id/light_tips_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/wait_tips_tv"
-        android:layout_marginTop="@dimen/x16"
-        android:layout_centerHorizontal="true"
-        android:textSize="14sp"
-        android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/wait_tips_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opt_img"
+            android:layout_marginTop="@dimen/x16"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:text="@string/wait_device_tips"/>
 
-    <Button
-        android:id="@+id/next_step_btn"
-        android:layout_width="@dimen/x310"
-        android:layout_height="@dimen/y50"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/x16"
-        android:text="@string/btn_next"
-        android:textSize="18sp"
-        android:alpha="0.25"
-        android:enabled="false"
-        style="@style/ButtonTheme"/>
+        <TextView
+            android:id="@+id/light_tips_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wait_tips_tv"
+            android:layout_marginTop="@dimen/x16"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"/>
 
-    <TextView
-        android:id="@+id/light_state_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/next_step_btn"
-        android:textColor="@color/light_gray"
-        android:layout_marginBottom="@dimen/x32"
-        android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/next_step_btn"
+            android:layout_width="@dimen/x310"
+            android:layout_height="@dimen/y50"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/x16"
+            android:text="@string/btn_next"
+            android:textSize="18sp"
+            android:alpha="@{btnEnable ? 1.0f : 0.25f}"
+            android:enabled="@{btnEnable}"
+            style="@style/ButtonTheme"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/light_state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/next_step_btn"
+            android:textColor="@color/light_gray"
+            android:layout_marginBottom="@dimen/x32"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 </layout>

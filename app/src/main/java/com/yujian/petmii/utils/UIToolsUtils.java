@@ -1,9 +1,8 @@
 package com.yujian.petmii.utils;
 
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Selection;
@@ -14,10 +13,13 @@ import android.text.method.NumberKeyListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.widget.Button;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author lisc
@@ -340,5 +342,15 @@ public class UIToolsUtils {
 
 	        return b > a ? c >= a && c <= b : c >= b && c <= a;
 	    }
-	}	
+	}
+
+	public static void closeInputMethod(FragmentActivity activity)
+	{
+		if (activity.getCurrentFocus() != null
+				&& activity.getCurrentFocus().getWindowToken() != null) {
+			InputMethodManager inputMgr = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+			inputMgr.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),
+					InputMethodManager.HIDE_NOT_ALWAYS);
+		}
+	}
 }

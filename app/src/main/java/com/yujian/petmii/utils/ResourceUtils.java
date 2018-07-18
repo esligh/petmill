@@ -34,6 +34,4 @@ public class ResourceUtils {
 	{
 		return PetmiiApplication.getContext().getResources().getColor(resId);
 	}
-	
-	
 }

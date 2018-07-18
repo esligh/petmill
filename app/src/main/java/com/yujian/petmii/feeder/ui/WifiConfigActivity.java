@@ -1,8 +1,6 @@
 package com.yujian.petmii.feeder.ui;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.yujian.petmii.R;
 import com.yujian.petmii.base.BaseActivity;
@@ -20,6 +18,8 @@ public class WifiConfigActivity extends BaseActivity<WifiConfigPresenter,
 
     @Override
     public void initView() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
     }
 

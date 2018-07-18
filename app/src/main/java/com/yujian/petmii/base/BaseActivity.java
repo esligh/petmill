@@ -1,8 +1,8 @@
 package com.yujian.petmii.base;
 
-import android.app.ProgressDialog;
 import android.content.pm.ActivityInfo;
 import android.databinding.ViewDataBinding;
+import android.view.MenuItem;
 
 public abstract class BaseActivity<P extends BasePresenter, B extends ViewDataBinding> extends DataBindingActivity<B>  {
 
@@ -22,4 +22,13 @@ public abstract class BaseActivity<P extends BasePresenter, B extends ViewDataBi
 		 super.onResume();
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()){
+			case android.R.id.home:
+				finish();
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

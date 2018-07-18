@@ -1,7 +1,6 @@
 package com.yujian.petmii.feeder.ui;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.Intent;
 
 import com.yujian.petmii.R;
 import com.yujian.petmii.base.BaseActivity;
@@ -19,6 +18,17 @@ public class AddFeederActivity extends BaseActivity<AddFeederPresenter,
     @Override
     public void initView()
     {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        mViewBinding.setBtnEnable(true);
 
+        setListener();
     }
+
+    private void setListener()
+    {
+        mViewBinding.nextStepBtn.setOnClickListener(v ->
+                startActivity(new Intent(this,WifiChooserActivity.class)));
+    }
+
 }
