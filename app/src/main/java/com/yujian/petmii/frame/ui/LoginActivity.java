@@ -13,7 +13,9 @@ import com.yujian.petmii.base.BaseActivity;
 import com.yujian.petmii.databinding.ActivityLoginBinding;
 import com.yujian.petmii.frame.contract.LoginContract;
 import com.yujian.petmii.frame.presenter.LoginPresenter;
+import com.yujian.petmii.utils.L;
 import com.yujian.petmii.utils.ToastUtils;
+import com.yujian.petmii.utils.ToolsUtils;
 import com.yujian.petmii.utils.UIToolsUtils;
 
 public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBinding>
@@ -30,17 +32,24 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
         mPresenter.onAttached();
         UIToolsUtils.setViewPressSelector(mViewBinding.clearIv,
                 R.drawable.ic_clean_n,R.drawable.ic_clean_c);
-        mViewBinding.verifyCodeEt.setOnFocusChangeListener(((view, b) -> {
+
+        setListener();
+        mViewBinding.setBtnEnable(true);
+    }
+
+    private void setListener()
+    {
+        mViewBinding.pwdEt.setOnFocusChangeListener(((view, b) -> {
             if(b){
-                setClearIconVisible(mViewBinding.verifyCodeEt.length() > 0);
+                setClearIconVisible(mViewBinding.pwdEt.length() > 0);
             }else{
                 setClearIconVisible(false);
             }
         }));
 
-        mViewBinding.clearIv.setOnClickListener(v->mViewBinding.verifyCodeEt.setText(""));
+        mViewBinding.clearIv.setOnClickListener(v->mViewBinding.pwdEt.setText(""));
 
-        mViewBinding.verifyCodeEt.addTextChangedListener(new TextWatcher() {
+        mViewBinding.pwdEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -48,7 +57,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if (mViewBinding.verifyCodeEt.isFocused()) {
+                if (mViewBinding.pwdEt.isFocused()) {
                     setClearIconVisible(s.length() > 0);
                 }
             }
@@ -62,16 +71,25 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
         mViewBinding.loginBtn.setOnClickListener(v->{
             String number = mViewBinding.phoneNumberEt.getText().toString().trim();
             if(TextUtils.isEmpty(number)){
+                ToastUtils.shortShow(R.string.please_input_phone);
                 return ;
             }
-            String code = mViewBinding.verifyCodeEt.getText().toString().trim();
-            if(TextUtils.isEmpty(code)){
+            if(!ToolsUtils.isValidPhone(number)){
+                ToastUtils.shortShow(R.string.error_phone_number);
                 return ;
             }
-            mPresenter.doLogin(number,code);
+            String pwd = mViewBinding.pwdEt.getText().toString().trim();
+            if(TextUtils.isEmpty(pwd)){
+                ToastUtils.shortShow(R.string.please_input_pwd);
+                return ;
+            }
+            mPresenter.doLogin(number,pwd);
         });
 
-        mViewBinding.setBtnEnable(true);
+        mViewBinding.userRegTv.setOnClickListener(v->{
+            UIToolsUtils.closeInputMethod(this);
+            startActivity(new Intent(this,RegisterActivity.class));
+        });
     }
 
     private void setClearIconVisible(boolean visible)
@@ -97,11 +115,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
     @Override
     public void onLoginSuccess() {
         startActivity(new Intent(this,MainActivity.class));
+        finish();
     }
 
     @Override
-    public void onLoginFailed(String reason) {
-        ToastUtils.shortShow("用户名或密码错误");
+    public void onLoginFailed(Throwable error) {
+        L.d("err","doLogin=>"+error.getMessage());
+        closeProgressDlg();
     }
 
     @Override

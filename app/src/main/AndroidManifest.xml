@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yujian.petmii">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+
     <application
         android:name=".PetmiiApplication"
         android:allowBackup="false"
@@ -22,15 +28,33 @@
         <activity
             android:name=".frame.ui.LoginActivity"
             android:theme="@style/PetmiiTheme.NoActionBar" />
-        <activity android:name=".frame.ui.MainActivity" />
-        <activity android:name=".feeder.ui.ConfigActivity" />
-        <activity android:name=".feeder.ui.ConnectStateActivity" />
-        <activity android:name=".feeder.ui.ResetDeviceActvity" />
-        <activity android:name=".feeder.ui.UserProtocolActivity" />
-        <activity android:name=".feeder.ui.WifiConfigActivity" />
-        <activity android:name=".feeder.ui.AddFeederActivity" />
-        <activity android:name=".feeder.ui.FeederMainActivity" />
-        <activity android:name=".frame.ui.RegisterActivity"></activity>
+        <activity android:name=".feeder.ui.ConfigActivity"/>
+        <activity
+            android:name=".feeder.ui.ResetDeviceActvity"
+            android:label="@string/title_reset" />
+        <activity
+            android:name=".feeder.ui.UserProtocolActivity"
+            android:label="@string/user_protocol" />
+        <activity
+            android:name=".feeder.ui.WifiConfigActivity"
+            android:label="@string/title_config_wifi" />
+        <activity
+            android:name=".feeder.ui.AddFeederActivity"
+            android:label="@string/title_add_feeder" />
+
+        <activity android:name=".feeder.ui.FeederMainActivity"
+            android:theme="@style/PetmiiTheme.Full"
+            android:label="@string/feeder"/>
+
+        <activity
+            android:name=".frame.ui.RegisterActivity"
+            android:theme="@style/PetmiiTheme.NoActionBar" />
+        <activity
+            android:name=".frame.ui.MainActivity"
+            android:theme="@style/PetmiiTheme.NoActionBar" />
+
+        <activity android:name=".feeder.ui.WifiChooserActivity"
+            android:label="@string/title_choose_wifi"/>
     </application>
 
 </manifest>

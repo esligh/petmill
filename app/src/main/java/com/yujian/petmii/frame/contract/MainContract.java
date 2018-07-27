@@ -21,5 +21,6 @@ public interface MainContract {
     {
         public abstract List<ProductInfo> getProducts();
         public abstract void attachProduct(ProductInfo product);
+        public abstract void doLogout();
     }
 }

@@ -9,11 +9,161 @@
         tools:context="com.yujian.petmii.feeder.ui.FeederMainActivity">
 
         <RelativeLayout
-            android:id="@+id/topbar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/topbar_height">
+            android:layout_height="@dimen/y270"
+            android:background="@drawable/ic_feeder_bg">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:minHeight="?attr/actionBarSize"
+                android:background="#00000000"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:fitsSystemWindows="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y48"
+                android:layout_alignParentBottom="true"
+                android:background="#80FF741E"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/call_iv"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:layout_marginRight="@dimen/x16"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle_call_bg"
+                    android:src="@drawable/ic_call"
+                    android:scaleType="centerInside"/>
+
+                <ImageView
+                    android:id="@+id/record_iv"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:layout_marginRight="@dimen/x16"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_record"
+                    android:layout_toLeftOf="@id/call_iv"
+                    android:scaleType="centerInside"/>
+
+                <ImageView
+                    android:id="@+id/picture_iv"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:layout_marginRight="@dimen/x16"
+                    android:layout_toRightOf="@id/call_iv"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_picture"
+                    android:scaleType="centerInside"/>
+
+                <ImageView
+                    android:id="@+id/sound_state_iv"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:layout_marginRight="@dimen/x16"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/record_iv"
+                    android:src="@drawable/ic_mute"
+                    android:scaleType="centerInside"/>
+
+                <ImageView
+                    android:id="@+id/screen_ctrl_iv"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:layout_marginRight="@dimen/x16"
+                    android:layout_toRightOf="@id/picture_iv"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_screen_full"
+                    android:scaleType="centerInside"/>
+            </RelativeLayout>
 
         </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x16">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/light_btn"
+                    android:layout_height="@dimen/x60"
+                    android:layout_width="@dimen/x60"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:src="@drawable/feeder_main_light_btn_selector"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="14sp"
+                    android:layout_marginTop="@dimen/y4"
+                    android:text="@string/play"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x48"
+                android:layout_marginRight="@dimen/x48"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/feed_btn"
+                    android:layout_height="@dimen/x60"
+                    android:layout_width="@dimen/x60"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:src="@drawable/feeder_main_feed_btn_selector"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="14sp"
+                    android:layout_marginTop="@dimen/y4"
+                    android:text="@string/feed"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/record_btn"
+                    android:layout_height="@dimen/x60"
+                    android:layout_width="@dimen/x60"
+                    android:clickable="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/feeder_main_record_btn_selector"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="14sp"
+                    android:layout_marginTop="@dimen/y4"
+                    android:text="@string/leave_sound"/>
+            </LinearLayout>
+
+        </LinearLayout>
     </RelativeLayout>
 
 </layout>

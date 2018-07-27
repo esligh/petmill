@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.constraint.ConstraintLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.v4.widget.DrawerLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/draw_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         tools:context="com.yujian.petmii.frame.ui.MainActivity">
 
-        <ListView
-            android:id="@+id/products_list"
+        <include
+            android:id="@+id/main_layout"
+            layout="@layout/layout_main" />
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/x16"/>
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/layout_navi_header"
+            app:menu="@menu/navi_menu">
 
-    </android.support.constraint.ConstraintLayout>
+        </android.support.design.widget.NavigationView>
 
+    </android.support.v4.widget.DrawerLayout>
 </layout>

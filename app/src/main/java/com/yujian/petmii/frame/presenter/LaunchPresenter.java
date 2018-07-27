@@ -4,9 +4,9 @@ import android.content.Intent;
 
 import com.yujian.petmii.frame.contract.LaunchContract;
 import com.yujian.petmii.frame.model.LaunchModel;
-import com.yujian.petmii.frame.ui.LaunchActivity;
 import com.yujian.petmii.frame.ui.LoginActivity;
-import com.yujian.petmii.utils.RxUtils;
+import com.yujian.petmii.frame.ui.MainActivity;
+import com.yujian.petmii.global.Session;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,8 +29,13 @@ public class LaunchPresenter extends LaunchContract.Presenter{
         Observable.timer(sDelayTime, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(n->{
-                    mView.getContext().startActivity(new Intent(mView.getContext(),
-                            LoginActivity.class));
+                    if(Session.inst().withSession()){
+                        mView.getContext().startActivity(new Intent(mView.getContext(),
+                                MainActivity.class));
+                    }else{
+                        mView.getContext().startActivity(new Intent(mView.getContext(),
+                                LoginActivity.class));
+                    }
                     mView.finishActivity();
                 });
     }

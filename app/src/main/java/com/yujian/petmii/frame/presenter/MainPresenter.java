@@ -2,10 +2,16 @@ package com.yujian.petmii.frame.presenter;
 
 import android.content.Intent;
 
-import com.yujian.petmii.feeder.ui.ConfigActivity;
+import com.yujian.petmii.PetmiiApplication;
+import com.yujian.petmii.R;
+import com.yujian.petmii.core.DeviceConnection;
+import com.yujian.petmii.feeder.ui.FeederMainActivity;
 import com.yujian.petmii.frame.contract.MainContract;
 import com.yujian.petmii.frame.entity.ProductInfo;
+import com.yujian.petmii.frame.ui.LoginActivity;
 import com.yujian.petmii.global.Constants;
+import com.yujian.petmii.utils.PreferencesUtils;
+import com.yujian.petmii.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +25,8 @@ public class MainPresenter extends MainContract.Presenter{
 
     @Override
     public void onAttached() {
-
+        mProducts.add(new ProductInfo(R.mipmap.ic_launcher,
+                ResourceUtils.getString(R.string.feeder),"遇见科技产品"));
     }
 
     @Override
@@ -34,9 +41,16 @@ public class MainPresenter extends MainContract.Presenter{
 
     @Override
     public void attachProduct(ProductInfo product) {
-        Intent intent = new Intent(mView.getContext(), ConfigActivity.class);
-        intent.putExtra(Constants.Entity.ProductInfo,product);
-        mView.getContext().startActivity(intent);
+//        Intent intent = new Intent(mView.getContext(), FeederMainActivity.class);
+//        intent.putExtra(Constants.Entity.ProductInfo,product);
+//        mView.getContext().startActivity(intent);
+        DeviceConnection.initConnection("","");
+    }
+
+    @Override
+    public void doLogout() {
+        PreferencesUtils.removeKey(PetmiiApplication.getContext(),Constants.PrefKey.SESSION);
+        mView.getContext().startActivity(new Intent(mView.getContext(), LoginActivity.class));
     }
 
 }

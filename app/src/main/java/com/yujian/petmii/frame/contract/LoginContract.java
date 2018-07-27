@@ -11,7 +11,7 @@ public interface LoginContract {
     interface View extends BaseView
     {
         void onLoginSuccess();
-        void onLoginFailed(String reason);
+        void onLoginFailed(Throwable error);
         void showProgressDlg(String msg);
         void closeProgressDlg();
     }

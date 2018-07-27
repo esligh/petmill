@@ -8,7 +8,14 @@ import java.io.Serializable;
 
 public class ProductInfo implements Serializable{
 
-    public String name;
     public int    logo;
+    public String name;
     public String extra;
+
+    public ProductInfo(int logo,String name,String extra)
+    {
+        this.name = name;
+        this.logo = logo;
+        this.extra = extra;
+    }
 }

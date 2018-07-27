@@ -3,6 +3,9 @@ package com.yujian.petmii;
 import android.app.Application;
 import android.content.Context;
 
+import com.yujian.petmii.global.Constants;
+
+
 /**
  * Created by lisic on 2018/4/6.
  */
@@ -31,4 +34,5 @@ public class PetmiiApplication extends Application{
     public void onTerminate() {
         super.onTerminate();
     }
+
 }

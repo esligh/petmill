@@ -17,15 +17,15 @@ import javax.crypto.spec.IvParameterSpec;
 
 public class DES3 {
     // 密钥
-    private String secretKey = "#Feeder_H90d8kdk6lhi58rt";
+    private final static String secretKey = "#Feeder_H90d8kdk6lhi58rt";
     // 向量
-    private final String iv = "01234567";
+    private final static String iv = "01234567";
     // 加解密统一使用的编码方式
-    private final String encoding = "utf-8";
+    private final static String encoding = "utf-8";
 
-    public DES3(String key) {
-        secretKey = key;
-    }
+//    public DES3(String key) {
+//        secretKey = key;
+//    }
 
     /**
      * 加密
@@ -34,7 +34,7 @@ public class DES3 {
      * @return
      * @throws Exception
      */
-    public String encode(String plainText) {
+    public static String encode(String plainText) {
         try {
             Key deskey = null;
             DESedeKeySpec spec = new DESedeKeySpec(secretKey.getBytes());
@@ -58,7 +58,7 @@ public class DES3 {
      * @return
      * @throws Exception
      */
-    public String decode(String encryptText) {
+    public static String decode(String encryptText) {
         try {
             Key deskey = null;
             DESedeKeySpec spec = new DESedeKeySpec(secretKey.getBytes());

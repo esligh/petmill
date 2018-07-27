@@ -2,11 +2,19 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <import type="android.view.View"/>
+
+        <variable name="btnEnable" type="boolean" />
+        <variable name="showCodeClear" type="boolean" />
+        <variable name="canGetCode" type="boolean" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.yujian.petmii.frame.ui.LoginActivity">
+        tools:context="com.yujian.petmii.frame.ui.RegisterActivity">
 
         <RelativeLayout
             android:layout_width="@dimen/x328"
@@ -20,21 +28,23 @@
                 android:layout_width="match_parent"
                 android:drawablePadding="@dimen/x4"
                 android:drawableLeft="@drawable/ic_phone"
-                android:inputType="text"
+                android:inputType="number"
+                android:maxLength="11"
                 android:hint="@string/hint_phone_num"
                 android:paddingRight="@dimen/x100"/>
 
             <Button
-                android:id="@+id/pick_code_btn"
+                android:id="@+id/get_code_btn"
                 android:layout_width="@dimen/x100"
                 android:layout_height="@dimen/y38"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/pick_verify_code"
-                android:textSize="18sp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                style="@style/ButtonTheme"/>
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:alpha="@{canGetCode? 1.0f:0.5f}"
+                android:enabled="@{canGetCode}"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -43,13 +53,14 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/y8">
 
-            <com.yujian.petmii.widget.ClearEditText
+            <EditText
                 android:id="@+id/verify_code_et"
                 android:drawableLeft="@drawable/ic_password"
                 android:drawablePadding="@dimen/x4"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:inputType="number|numberSigned"
+                android:inputType="number"
+                android:maxLength="6"
                 android:paddingRight="@dimen/x100"
                 android:hint="@string/hint_verify_code"/>
 
@@ -60,7 +71,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_clean_n"
-                android:visibility="gone"/>
+                android:visibility="@{showCodeClear ? View.VISIBLE:View.GONE}"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -69,24 +80,25 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/y8">
 
-            <com.yujian.petmii.widget.ClearEditText
+            <EditText
                 android:id="@+id/user_pwd_et"
                 android:drawableLeft="@drawable/ic_password"
                 android:drawablePadding="@dimen/x4"
+                android:maxLength="20"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:inputType="number|numberSigned"
+                android:inputType="textPassword"
                 android:paddingRight="@dimen/x100"
-                android:hint="@string/hint_verify_code"/>
+                android:hint="@string/hint_pwd"/>
 
             <ImageView
-                android:id="@+id/pwd_clear_iv"
+                android:id="@+id/pwd_eye_iv"
                 android:layout_height="@dimen/x28"
                 android:layout_width="@dimen/x28"
+                android:clickable="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_clean_n"
-                android:visibility="gone"/>
+                android:src="@drawable/ic_eye"/>
         </RelativeLayout>
 
         <Button
@@ -97,8 +109,8 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/btn_register"
             android:textSize="18sp"
-            android:alpha="0.25"
-            android:enabled="false"
+            android:alpha="@{btnEnable ? 1.0f : 0.25f}"
+            android:enabled="@{btnEnable}"
             style="@style/ButtonTheme"/>
 
     </LinearLayout>

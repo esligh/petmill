@@ -25,21 +25,22 @@
                 android:layout_width="match_parent"
                 android:drawablePadding="@dimen/x4"
                 android:drawableLeft="@drawable/ic_phone"
-                android:inputType="text"
+                android:inputType="number"
+                android:maxLength="11"
                 android:hint="@string/hint_phone_num"
                 android:paddingRight="@dimen/x100"/>
 
-            <Button
-                android:id="@+id/pick_code_btn"
-                android:layout_width="@dimen/x100"
-                android:layout_height="@dimen/y38"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/pick_verify_code"
-                android:textSize="18sp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                style="@style/ButtonTheme"/>
+            <!--<Button-->
+                <!--android:id="@+id/pick_code_btn"-->
+                <!--android:layout_width="@dimen/x100"-->
+                <!--android:layout_height="@dimen/y38"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:text="@string/hint_pwd"-->
+                <!--android:textSize="18sp"-->
+                <!--android:focusable="true"-->
+                <!--android:focusableInTouchMode="true"-->
+                <!--style="@style/ButtonTheme"/>-->
         </RelativeLayout>
 
         <RelativeLayout
@@ -49,14 +50,14 @@
             android:layout_marginTop="@dimen/y8">
 
             <com.yujian.petmii.widget.ClearEditText
-                android:id="@+id/verify_code_et"
+                android:id="@+id/pwd_et"
                 android:drawableLeft="@drawable/ic_password"
                 android:drawablePadding="@dimen/x4"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:inputType="number|numberSigned"
+                android:inputType="textPassword"
                 android:paddingRight="@dimen/x100"
-                android:hint="@string/hint_verify_code"/>
+                android:hint="@string/hint_pwd"/>
 
             <ImageView
                 android:id="@+id/clear_iv"
@@ -70,16 +71,41 @@
 
         <Button
             android:id="@+id/login_btn"
-            android:layout_width="@dimen/x310"
+            android:layout_width="@dimen/x320"
             android:layout_height="@dimen/y50"
             android:layout_marginTop="@dimen/x8"
             android:layout_gravity="center_horizontal"
-            android:text="@string/btn_submit"
+            android:text="@string/btn_login"
             android:textSize="18sp"
-            android:alpha="@{btnEnable ? 1.0:0.25}"
+            android:alpha="@{btnEnable ? 1.0f:0.25f}"
             android:enabled="@{btnEnable}"
             style="@style/ButtonTheme"/>
 
+        <RelativeLayout
+            android:layout_width="@dimen/x320"
+            android:layout_height="@dimen/y55"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y20">
+
+            <TextView
+                android:id="@+id/forget_pwd_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_alignParentLeft="true"
+                android:text="@string/forget_pwd"
+                android:textColor="@color/light_gray"/>
+
+            <TextView
+                android:id="@+id/user_reg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_alignParentRight="true"
+                android:text="@string/user_reg"
+                android:textColor="@color/light_gray"/>
+
+        </RelativeLayout>
     </LinearLayout>
 
 </layout>
