@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -13,4 +14,18 @@
             android:title="@string/logout" />
     </group>
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/action_about"
+            android:title="@string/about_petmill" />
+        <item
+            android:id="@+id/action_settings"
+            android:title="@string/setting" />
+    </group>
+
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 </menu>

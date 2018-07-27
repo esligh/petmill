@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.yujian.petmii.frame.ui.MainActivity">
@@ -11,3 +12,18 @@
         android:showAsAction="never"
         android:title="@string/action_settings" />
 </menu>
+=======
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.yujian.petmii.frame.ui.MainActivity">
+    <item
+        android:id="@+id/action_example"
+        android:showAsAction="withText|ifRoom"
+        android:title="@string/action_example" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings" />
+</menu>
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2

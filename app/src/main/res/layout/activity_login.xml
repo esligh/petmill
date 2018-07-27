@@ -26,7 +26,10 @@
                 android:drawablePadding="@dimen/x4"
                 android:drawableLeft="@drawable/ic_phone"
                 android:inputType="number"
+<<<<<<< HEAD
                 android:maxLength="11"
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
                 android:hint="@string/hint_phone_num"
                 android:paddingRight="@dimen/x100"/>
 
@@ -55,7 +58,11 @@
                 android:drawablePadding="@dimen/x4"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:inputType="textPassword"
+=======
+                android:inputType="numberPassword"
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
                 android:paddingRight="@dimen/x100"
                 android:hint="@string/hint_pwd"/>
 

@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/esptouch/esptouch.iml" filepath="$PROJECT_DIR$/esptouch/esptouch.iml" />
       <module fileurl="file://$PROJECT_DIR$/petmii.iml" filepath="$PROJECT_DIR$/petmii.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/petmill.iml" filepath="$PROJECT_DIR$/petmill.iml" />
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
     </modules>
   </component>
 </project>

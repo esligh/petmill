@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
+<<<<<<< HEAD
 import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+=======
+import android.view.Menu;
+import android.view.MenuItem;
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 
 import com.yujian.petmii.R;
 import com.yujian.petmii.base.BaseActivity;
@@ -34,9 +39,14 @@ public class MainActivity extends BaseActivity<MainPresenter,ActivityMainBinding
 
     @Override
     public void initView() {
+<<<<<<< HEAD
         mViewBinding.mainLayout.toolbar.setTitleTextColor(Color.WHITE);
         mViewBinding.mainLayout.toolbar.setTitle("");
         setSupportActionBar(mViewBinding.mainLayout.toolbar);
+=======
+        setSupportActionBar(mViewBinding.mainLayout.toolbar);
+        mViewBinding.mainLayout.toolbar.setTitleTextColor(Color.WHITE);
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, mViewBinding.drawLayout, mViewBinding.mainLayout.toolbar, R.string.open, R.string.close);
         mViewBinding.drawLayout.setDrawerListener(toggle);
@@ -52,9 +62,13 @@ public class MainActivity extends BaseActivity<MainPresenter,ActivityMainBinding
         };
         mViewBinding.mainLayout.productsList.setAdapter(mAdapter);
         setListener();
+<<<<<<< HEAD
         userNameTv = (TextView) mViewBinding.navigationView.getHeaderView(0).findViewById(R.id.user_name_tv);
         mPresenter.onAttached();
         initUserView();
+=======
+        mPresenter.onAttached();
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
     }
 
     private void setListener()
@@ -66,20 +80,26 @@ public class MainActivity extends BaseActivity<MainPresenter,ActivityMainBinding
 
         mViewBinding.navigationView.setNavigationItemSelectedListener(item -> {
             mViewBinding.drawLayout.closeDrawer(GravityCompat.START);
+<<<<<<< HEAD
             switch(item.getItemId()){
                 case R.id.action_logout:
                     askForLogout();
                     break;
             }
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
             return true;
         });
     }
 
+<<<<<<< HEAD
     private void initUserView()
     {
         userNameTv.setText(Session.inst().userName);
     }
 
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
     @Override
     public void onBackPressed() {
         if (mViewBinding.drawLayout.isDrawerOpen(GravityCompat.START)) {
@@ -113,6 +133,7 @@ public class MainActivity extends BaseActivity<MainPresenter,ActivityMainBinding
             case R.id.action_add:
                 startActivity(new Intent(this, AddFeederActivity.class));
                 break;
+<<<<<<< HEAD
 
         }
         return true;
@@ -131,4 +152,9 @@ public class MainActivity extends BaseActivity<MainPresenter,ActivityMainBinding
         dialog.show();
     }
 
+=======
+        }
+        return true;
+    }
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -65,4 +66,73 @@
             android:enabled="@{btnEnable}"
             style="@style/ButtonTheme"/>
     </LinearLayout>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="btnEnable" type="boolean" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_wifi_chooser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.yujian.petmii.feeder.ui.WifiChooserActivity">
+
+        <RelativeLayout
+            android:layout_width="@dimen/x328"
+            android:layout_height="@dimen/y55"
+            android:layout_marginTop="@dimen/x100"
+            android:layout_gravity="center_horizontal">
+
+            <Spinner
+                android:id="@+id/wifi_sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/spinnerTheme"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/x328"
+            android:layout_height="@dimen/y55"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y8">
+
+            <EditText
+                android:id="@+id/wifi_pwd_et"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="@dimen/x4"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:inputType="numberPassword"
+                android:paddingRight="@dimen/x100"
+                android:hint="@string/hint_pwd"/>
+
+            <ImageView
+                android:id="@+id/pwd_eye_iv"
+                android:layout_height="@dimen/x28"
+                android:layout_width="@dimen/x28"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:src="@drawable/ic_eye"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/next_step_btn"
+            android:layout_width="@dimen/x320"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/y32"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/btn_next"
+            android:textSize="18sp"
+            android:alpha="@{btnEnable ? 1.0f:0.25f}"
+            android:enabled="@{btnEnable}"
+            style="@style/ButtonTheme"/>
+    </LinearLayout>
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 </layout>

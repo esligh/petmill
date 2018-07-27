@@ -3,10 +3,16 @@ package com.yujian.petmii.frame.ui;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.text.Editable;
+<<<<<<< HEAD
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
+=======
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 
 import com.yujian.petmii.R;
 import com.yujian.petmii.base.BaseActivity;
@@ -38,16 +44,26 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
         mPresenter.onAttached();
         setListener();
         mViewBinding.setBtnEnable(true);
+<<<<<<< HEAD
         mViewBinding.setCanGetCode(true);
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
     }
 
     private void setListener()
     {
         mViewBinding.verifyCodeEt.setOnFocusChangeListener(((view, b) -> {
+<<<<<<< HEAD
             if(b) {
                 mViewBinding.setShowCodeClear(mViewBinding.verifyCodeEt.length() > 0);
             } else {
                 mViewBinding.setShowCodeClear(false);
+=======
+            if(b){
+                setClearIconVisible(mViewBinding.verifyCodeEt.length() > 0);
+            }else{
+                setClearIconVisible(false);
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
             }
         }));
 
@@ -60,7 +76,11 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if (mViewBinding.verifyCodeEt.isFocused()) {
+<<<<<<< HEAD
                     mViewBinding.setShowCodeClear(s.length() > 0);
+=======
+                    setClearIconVisible(s.length() > 0);
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
                 }
             }
 
@@ -70,6 +90,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
             }
         });
 
+<<<<<<< HEAD
         mViewBinding.codeClearIv.setOnClickListener(v -> mViewBinding.verifyCodeEt.setText(""));
         mViewBinding.pwdEyeIv.setOnTouchListener((v, event) -> {
             switch(event.getAction()){
@@ -87,6 +108,8 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
             return false;
         });
 
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
         mViewBinding.registerBtn.setOnClickListener(v->{
             String account = mViewBinding.phoneNumberEt.getText().toString();
             String code = mViewBinding.verifyCodeEt.getText().toString();
@@ -119,6 +142,17 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter,ActivityReg
         });
     }
 
+<<<<<<< HEAD
+=======
+    private void setClearIconVisible(boolean visible)
+    {
+        if(visible){
+            mViewBinding.codeClearIv.setVisibility(View.VISIBLE);
+        } else {
+            mViewBinding.codeClearIv.setVisibility(View.GONE);
+        }
+    }
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 
     @Override
     public Context getContext() {

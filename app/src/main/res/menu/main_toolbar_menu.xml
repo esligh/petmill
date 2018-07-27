@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,4 +8,15 @@
         android:icon="@drawable/ic_add"
         android:orderInCategory="100"
         app:showAsAction="always" />
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_add"
+        android:title=""
+        android:icon="@drawable/ic_add"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 </menu>

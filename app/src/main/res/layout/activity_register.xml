@@ -3,11 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+<<<<<<< HEAD
         <import type="android.view.View"/>
 
         <variable name="btnEnable" type="boolean" />
         <variable name="showCodeClear" type="boolean" />
         <variable name="canGetCode" type="boolean" />
+=======
+        <variable name="btnEnable" type="boolean" />
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
     </data>
 
     <LinearLayout
@@ -29,7 +33,10 @@
                 android:drawablePadding="@dimen/x4"
                 android:drawableLeft="@drawable/ic_phone"
                 android:inputType="number"
+<<<<<<< HEAD
                 android:maxLength="11"
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
                 android:hint="@string/hint_phone_num"
                 android:paddingRight="@dimen/x100"/>
 
@@ -60,7 +67,10 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:inputType="number"
+<<<<<<< HEAD
                 android:maxLength="6"
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
                 android:paddingRight="@dimen/x100"
                 android:hint="@string/hint_verify_code"/>
 
@@ -87,7 +97,10 @@
                 android:maxLength="20"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:inputType="textPassword"
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
                 android:paddingRight="@dimen/x100"
                 android:hint="@string/hint_pwd"/>
 

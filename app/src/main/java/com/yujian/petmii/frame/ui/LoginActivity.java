@@ -74,6 +74,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
                 ToastUtils.shortShow(R.string.please_input_phone);
                 return ;
             }
+<<<<<<< HEAD
             if(!ToolsUtils.isValidPhone(number)){
                 ToastUtils.shortShow(R.string.error_phone_number);
                 return ;
@@ -83,6 +84,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter,ActivityLoginBind
                 ToastUtils.shortShow(R.string.please_input_pwd);
                 return ;
             }
+=======
+            String pwd = mViewBinding.pwdEt.getText().toString().trim();
+            if(TextUtils.isEmpty(pwd)){
+                ToastUtils.shortShow(R.string.please_input_pwd);
+                return ;
+            }
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
             mPresenter.doLogin(number,pwd);
         });
 

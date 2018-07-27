@@ -1,7 +1,10 @@
 package com.yujian.petmii.feeder.ui;
 
 import android.content.Context;
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
 
 import com.yujian.petmii.R;
 import com.yujian.petmii.base.BaseActivity;
@@ -21,9 +24,13 @@ public class ConfigActivity extends BaseActivity<ConfigPresenter,ActivityConfigB
     public void initView() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+<<<<<<< HEAD
         mPresenter.onAttached();
         mPresenter.startConfig();
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
     }
+
 
     @Override
     public Context getContext() {

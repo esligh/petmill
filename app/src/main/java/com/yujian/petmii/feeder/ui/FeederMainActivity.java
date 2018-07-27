@@ -33,9 +33,12 @@ public class FeederMainActivity extends BaseActivity<FeederMainPresenter,Activit
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+<<<<<<< HEAD
             case android.R.id.home:
                 finish();
                 break;
+=======
+>>>>>>> 235af1f2e7dcd142969589321679241a085334a2
             case R.id.action_feeder_statistics:
                 break;
             case R.id.action_feeder_settings:
